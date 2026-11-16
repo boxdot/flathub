@@ -1,0 +1,10 @@
+[
+  {
+    "commit": "ae378f66cc86800ed77d893a97f4d710ce6dfda8",
+    "tag": "v0.25.0",
+    "dest": "src",
+    "disable-lfs": true,
+    "type": "git",
+    "url": "https://github.com/phnx-im/air.git"
+  }
+]

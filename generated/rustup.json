@@ -1,0 +1,117 @@
+{
+  "build-commands": [
+    "chmod +x rustup-init && ./rustup-init -y --no-modify-path --profile minimal --default-toolchain 1.97.1",
+    "install -Dm755 sccache/sccache /var/lib/cargo/bin/sccache"
+  ],
+  "build-options": {
+    "env": {
+      "CARGO_HOME": "/var/lib/cargo",
+      "RUSTUP_DIST_SERVER": "file:///run/build/rustup/dist-server",
+      "RUSTUP_HOME": "/var/lib/rustup"
+    }
+  },
+  "buildsystem": "simple",
+  "name": "rustup",
+  "sources": [
+    {
+      "dest": "dist-server/dist",
+      "sha256": "03569b1886ceb5c05276b50c8431ab111de944cd6140fe1fa7d821dd8e0f29cf",
+      "type": "file",
+      "url": "https://static.rust-lang.org/dist/channel-rust-1.97.1.toml"
+    },
+    {
+      "dest": "dist-server/dist",
+      "sha256": "3cd57815146650e28e1756549952f655c683a6576a689fbbc7a5ee9d1c6ffab2",
+      "type": "file",
+      "url": "https://static.rust-lang.org/dist/channel-rust-1.97.1.toml.sha256"
+    },
+    {
+      "only-arches": [
+        "x86_64"
+      ],
+      "sha256": "dda7234360b7f578ca8b0ddcb80145646fa61a67c1720a5abc7051b35c9fcb71",
+      "type": "file",
+      "url": "https://static.rust-lang.org/rustup/archive/1.29.1/x86_64-unknown-linux-gnu/rustup-init"
+    },
+    {
+      "only-arches": [
+        "aarch64"
+      ],
+      "sha256": "15f6e4ce9f583b929c996c91562bad6d4454f3281de858b02cdfdef615fac433",
+      "type": "file",
+      "url": "https://static.rust-lang.org/rustup/archive/1.29.1/aarch64-unknown-linux-gnu/rustup-init"
+    },
+    {
+      "dest": "dist-server/dist/2026-07-16",
+      "only-arches": [
+        "x86_64"
+      ],
+      "sha256": "e1be5f5ff7f7f80ca506fb65770b759edbdc6d303781ed71c5de8ec8a8394779",
+      "type": "file",
+      "url": "https://static.rust-lang.org/dist/2026-07-16/cargo-1.97.1-x86_64-unknown-linux-gnu.tar.xz"
+    },
+    {
+      "dest": "dist-server/dist/2026-07-16",
+      "only-arches": [
+        "aarch64"
+      ],
+      "sha256": "8f70bcaccea5ba4db187c3fd4d64e24592b4e16af513497201f5909d61691dbe",
+      "type": "file",
+      "url": "https://static.rust-lang.org/dist/2026-07-16/cargo-1.97.1-aarch64-unknown-linux-gnu.tar.xz"
+    },
+    {
+      "dest": "dist-server/dist/2026-07-16",
+      "only-arches": [
+        "x86_64"
+      ],
+      "sha256": "1c1e704ae80126b7de34f72ea2825f7fd01736dec20732faed47374b95282fba",
+      "type": "file",
+      "url": "https://static.rust-lang.org/dist/2026-07-16/rust-std-1.97.1-x86_64-unknown-linux-gnu.tar.xz"
+    },
+    {
+      "dest": "dist-server/dist/2026-07-16",
+      "only-arches": [
+        "aarch64"
+      ],
+      "sha256": "46aed8e63186350004d8ec6afca798811e6530b514352e5a8a26f3dc4939b3be",
+      "type": "file",
+      "url": "https://static.rust-lang.org/dist/2026-07-16/rust-std-1.97.1-aarch64-unknown-linux-gnu.tar.xz"
+    },
+    {
+      "dest": "dist-server/dist/2026-07-16",
+      "only-arches": [
+        "x86_64"
+      ],
+      "sha256": "9819d0a32d56bd339585319c80260e332779f5541fd66838ab7e016d6c814819",
+      "type": "file",
+      "url": "https://static.rust-lang.org/dist/2026-07-16/rustc-1.97.1-x86_64-unknown-linux-gnu.tar.xz"
+    },
+    {
+      "dest": "dist-server/dist/2026-07-16",
+      "only-arches": [
+        "aarch64"
+      ],
+      "sha256": "b344b81f0cd4c2246c7da8b197fe7a339d7dd02bb15cb69b2524115d9c75224c",
+      "type": "file",
+      "url": "https://static.rust-lang.org/dist/2026-07-16/rustc-1.97.1-aarch64-unknown-linux-gnu.tar.xz"
+    },
+    {
+      "dest": "sccache",
+      "only-arches": [
+        "x86_64"
+      ],
+      "sha256": "782d2b5dd7ae0a55ebe368ab258114d0928d019ac2d949ab85d5d02f3926709e",
+      "type": "archive",
+      "url": "https://github.com/mozilla/sccache/releases/download/v0.15.0/sccache-v0.15.0-x86_64-unknown-linux-musl.tar.gz"
+    },
+    {
+      "dest": "sccache",
+      "only-arches": [
+        "aarch64"
+      ],
+      "sha256": "3a6a3712b49da3d263bf2d30d702de4302793016019e800bfb81c0c69401d8f8",
+      "type": "archive",
+      "url": "https://github.com/mozilla/sccache/releases/download/v0.15.0/sccache-v0.15.0-aarch64-unknown-linux-musl.tar.gz"
+    }
+  ]
+}
